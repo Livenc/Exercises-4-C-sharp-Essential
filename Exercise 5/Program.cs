@@ -1,23 +1,25 @@
-﻿namespace Exercise_2
+﻿namespace Exercise_5
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             AbstractHandler file;
-            Console.WriteLine("input file name :");
+            Console.Write("input file name :");
             string fileName = Console.ReadLine();
-           if( fileName.EndsWith("txt"))
+            if (fileName.EndsWith("txt"))
             {
                 file = new TXTHandler();
                 Console.WriteLine("txt");
-            }else if (fileName.EndsWith("doc"))
+            }
+            else if (fileName.EndsWith("doc"))
             {
-                file = new TXTHandler();
+                file = new DOCHandler();
                 Console.WriteLine("doc");
-            }else if (fileName.EndsWith("xml"))
+            }
+            else if (fileName.EndsWith("xml"))
             {
-                file = new TXTHandler();
+                file = new XMLHandler();
                 Console.WriteLine("xml");
             }
             else
@@ -26,17 +28,15 @@
                 file = null;
                 Console.WriteLine("Not join");
             }
-           if (file != null)
+            if (file != null)
             {
                 file.Open();
                 file.Change();
                 file.Save();
             }
-            
 
 
-           // Console.WriteLine(fileName.TakeLast(3).ToString());
-            Console.ReadLine();
+
         }
     }
 }

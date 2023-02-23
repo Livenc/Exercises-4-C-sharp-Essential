@@ -8,10 +8,15 @@ namespace Exercise_3
 {
     internal class Player : IPlayable, IRecodable
     {
-        public void Pause()
+         void IPlayable.Pause()
         {
-            Console.WriteLine("Pause");
+            Console.WriteLine("Pause music");
         }
+         void IRecodable.Pause()
+        {
+            Console.WriteLine("Pause record music");
+        }
+
 
         public void Play()
         {
@@ -23,11 +28,16 @@ namespace Exercise_3
             Console.WriteLine("Record");
         }
 
-        public void Stop()
+         void IPlayable.Stop()
         {
-            Console.WriteLine("Stop");
+            Console.WriteLine("Stop play music");
         }
-        
+        void IRecodable.Stop()
+        {
+            Console.WriteLine("Stop record music");
+        }
+
+
 
     }
 }
